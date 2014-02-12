@@ -2,6 +2,11 @@
 source ./build_info.sh
 [[ $RUBY ]] || { echo 'please set $RUBY' && exit 1; }
 echo "EVERYBODY STAND BACK, WE'RE INSTALLING $RUBY"
+if [ `expr $RUBY : '.*-clang$'` -gt 0 ]; then
+  CC=${RUBY##*-}
+fi
+
+exit 0
 
 source ~/.bashrc
 unset DYLD_LIBRARY_PATH
