@@ -6,8 +6,6 @@ if [ `expr $RUBY : '.*-clang$'` -gt 0 ]; then
   CC=${RUBY##*-}
 fi
 
-exit 0
-
 source ~/.bashrc
 unset DYLD_LIBRARY_PATH
 
