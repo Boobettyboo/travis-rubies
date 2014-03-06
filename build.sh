@@ -75,8 +75,6 @@ else
 fi
 fold_end build
 
-puts $RUBY
-
 #######################################################
 # make sure bundler works
 fold_start check.1 "make sure bundler works"
