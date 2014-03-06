@@ -62,6 +62,10 @@ fold_start build "build $RUBY"
 rvm alias delete $RUBY
 rvm remove $RUBY
 if [ -n "${RUBY_PATCH}" ]; then
+  if [ "${RUBY_PATCH}" = "railsexpress" ]; then
+    git clone https://github.com/skaes/rvm-patchsets.git
+    cd rvm-patchsets && ./install.sh
+  fi
   rvm install $RUBY --patch $RUBY_PATCH -n $RUBY_PATCH --verify-downloads 1
   rvm prepare $RUBY
 else
