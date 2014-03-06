@@ -67,8 +67,8 @@ if [ -n "${RUBY_PATCH}" ]; then
     cd rvm-patchsets && ./install.sh
   fi
   rvm install $RUBY --patch $RUBY_PATCH -n $RUBY_PATCH --verify-downloads 1
-  rvm prepare $RUBY
   export RUBY="$RUBY-$RUBY_PATCH"
+  rvm prepare $RUBY
 else
   rvm install $RUBY --verify-downloads 1
   rvm prepare $RUBY
