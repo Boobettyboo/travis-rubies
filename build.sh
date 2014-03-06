@@ -68,12 +68,14 @@ if [ -n "${RUBY_PATCH}" ]; then
   fi
   rvm install $RUBY --patch $RUBY_PATCH -n $RUBY_PATCH --verify-downloads 1
   rvm prepare $RUBY
-  RUBY="$RUBY-$RUBY_PATCH"
+  export RUBY="$RUBY-$RUBY_PATCH"
 else
   rvm install $RUBY --verify-downloads 1
   rvm prepare $RUBY
 fi
 fold_end build
+
+puts $RUBY
 
 #######################################################
 # make sure bundler works
