@@ -61,7 +61,7 @@ fold_end rvm.2
 fold_start build "build $RUBY"
 rvm alias delete $RUBY
 rvm remove $RUBY
-if [ -e "${RUBY_PATCH}" ]; then
+if [ -n "${RUBY_PATCH}" ]; then
   rvm install $RUBY --patch $RUBY_PATCH -n $RUBY_PATCH --verify-downloads 1
   rvm prepare $RUBY
 else
